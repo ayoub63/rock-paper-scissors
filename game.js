@@ -8,8 +8,9 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
   finish = true;
+  let userChoice;
   while (finish) {
-    let userChoice = prompt("Pick Rock , Paper , or Scissors. ").toLowerCase();
+    userChoice = prompt("Pick Rock , Paper , or Scissors. ").toLowerCase();
 
     if (
       userChoice == "rock" ||
@@ -24,19 +25,21 @@ function getPlayerChoice() {
   return userChoice;
 }
 
-function playRound(getComputerChoice, getPlayerChoice) {
-  const getComputerChoice = getComputerChoice();
-  const getPlayerChoice = getPlayerChoice();
+function playRound() {
+  const getComputerChoice1 = getComputerChoice();
+  const getPlayerChoice2 = getPlayerChoice();
 
-  if (getComputerChoice == getPlayerChoice) {
+  if (getComputerChoice1 == getPlayerChoice2) {
     return "It is a tie!";
   } else if (
-    (getComputerChoice == "rock" && getPlayerChoice == "paper") ||
-    (getComputerChoice == "paper" && getPlayerChoice == "rock") ||
-    (getComputerChoice == "scissors" && getPlayerChoice == "paper")
+    (getComputerChoice1== "rock" && getPlayerChoice2 == "paper") ||
+    (getComputerChoice1 == "paper" && getPlayerChoice2 == "rock") ||
+    (getComputerChoice1 == "scissors" && getPlayerChoice2 == "paper")
   ) {
-    return "Computer wins";
+    return "Computer wins, Computer picked " + getComputerChoice1;
   } else {
-    return "Player wins";
+    return "Player wins,  Computer picked " + getComputerChoice1;
   }
 }
+
+
