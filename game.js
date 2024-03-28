@@ -3,7 +3,7 @@ function getComputerChoice() {
 
   const randNum = Math.floor(Math.random() * 3);
 
-  return strings[randNum];
+  return strings[randNum].toLowerCase();
 }
 
 function getPlayerChoice() {
@@ -24,3 +24,19 @@ function getPlayerChoice() {
   return userChoice;
 }
 
+function playRound(getComputerChoice, getPlayerChoice) {
+  const getComputerChoice = getComputerChoice();
+  const getPlayerChoice = getPlayerChoice();
+
+  if (getComputerChoice == getPlayerChoice) {
+    return "It is a tie!";
+  } else if (
+    (getComputerChoice == "rock" && getPlayerChoice == "paper") ||
+    (getComputerChoice == "paper" && getPlayerChoice == "rock") ||
+    (getComputerChoice == "scissors" && getPlayerChoice == "paper")
+  ) {
+    return "Computer wins";
+  } else {
+    return "Player wins";
+  }
+}
