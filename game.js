@@ -42,3 +42,25 @@ function playRound() {
     return playWin2;
   }
 }
+
+const scissors = document.createElement("button")
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+
+const buttons = document.querySelectorAll ("button")
+buttons.forEach (button => {
+  button.addEventListener("click" , () => {
+    switch (button.textContent) {
+      case "Scissors":
+        getPlayerChoice() = "Scissors"
+        playRound()
+      case "Rock":
+        getPlayerChoice() = "Rock"
+        playRound()
+      case "Paper":
+        getPlayerChoice() = "Paper"
+        playRound()
+      
+    }
+  })
+})
